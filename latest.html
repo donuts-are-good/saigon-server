@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latest Data</title>
+    <style>
+      body {
+        font-family: monospace;
+      }
+
+      th, td {
+          padding: 16px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+      }
+    </style>
+</head>
+<body>
+  <center>
+    <h1>SAIGON</h1>
+    <table>
+        <tr>
+            <th>Last Seen</th>
+            <th>Hostname</th>
+            <th>OS</th>
+            <th>Kernel</th>
+            <th>Uptime</th>
+            <th>Shell</th>
+            <th>CPU</th>
+            <th>RAM %</th>
+            <th>RAM Total</th>
+            <th>Disk Used</th>
+            <th>DiskTotal</th>
+            <th>DiskFree</th>
+            <th>DiskUsed</th>
+        </tr>
+        {{range .}}
+        <tr>
+            <td>{{.Hostname}}</td>
+            <td>{{.OS}}</td>
+            <td>{{.Kernel}}</td>
+            <td>{{.Uptime}}</td>
+            <td>{{.Shell}}</td>
+            <td>{{.CPU}}</td>
+            <td>{{.CPUPercentage}}</td>
+            <td>{{.MemStats}}</td>
+            <td>{{.RAMPercentage}}</td>
+            <td>{{.TotalDiskSpace}}</td>
+            <td>{{.FreeDiskSpace}}</td>
+            <td>{{.UsedDiskSpace}}</td>
+            <td>{{.SystemArch}}</td>
+        </tr>
+        {{end}}
+    </table>
+  </center>
+</body>
+</html>
